@@ -1,7 +1,8 @@
 import json
 import os
+
 from all_pr_review_bot import review_pr
-from pr_review_util import fetch_diff_content, fetch_pr_diff, post_review_comment
+from pr_review_util import fetch_pr_diff, post_review_comment
 
 
 def main():
