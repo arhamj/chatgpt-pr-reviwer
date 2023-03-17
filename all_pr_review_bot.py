@@ -1,4 +1,5 @@
-from pr_review_utils import fetch_prs, post_review_comment, review_pr
+from pr_review_util import (fetch_pr_diff, fetch_prs, post_review_comment,
+                            review_pr)
 
 
 def main():
@@ -8,7 +9,9 @@ def main():
     pull_requests = fetch_prs(repo)
 
     for pr in pull_requests:
-        review = review_pr(pr)
+        diff_content = fetch_pr_diff(repo, pr['number'])
+        print(f"Diff content for PR #{pr['number']}: {diff_content}")
+        review = review_pr(pr, diff_content)
         comment = post_review_comment(repo, pr, review)
         print(f"Posted review for PR #{pr['number']}: {review}")
 
