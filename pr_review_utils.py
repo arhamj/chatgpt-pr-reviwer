@@ -6,7 +6,7 @@ import openai
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Set up GitHub API
-GITHUB_ACCESS_TOKEN = os.getenv("GITHUB_ACCESS_TOKEN")
+GITHUB_ACCESS_TOKEN = os.getenv("GH_ACCESS_TOKEN")
 
 GITHUB_API_BASE_URL = "https://api.github.com"
 
